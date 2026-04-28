@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Статистика расходов"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Текущий месяц"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btn_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 Выбрать период"
+            android:backgroundTint="#2196F3" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_total_expenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Общие расходы: 0.00 ₽"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/holo_red_dark"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="На главный экран"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

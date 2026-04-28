@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        app:title="О приложении"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Место для логотипа (пока просто иконка) -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Финансовый Компас"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Версия 1.0"
+                android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="24dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                android:layout_marginVertical="16dp" />
+
+            <TextView
+                android:id="@+id/tv_developer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Разработчик: Uncle_Griff_studio"
+                android:textSize="14sp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="start" />
+
+            <Button
+                android:id="@+id/btn_privacy_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📄 Политика конфиденциальности"
+                android:backgroundTint="@color/purple_500"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btn_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📧 Связаться с разработчиком"
+                android:backgroundTint="@color/purple_500"
+                android:layout_marginTop="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                android:layout_marginVertical="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="© 2026 Uncle_Griff_studio"
+                android:textSize="12sp"
+                android:textColor="?android:attr/textColorSecondary" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

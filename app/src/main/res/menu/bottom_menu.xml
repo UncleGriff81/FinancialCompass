@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_shopping"
+        android:title="Списки покупок"
+        android:icon="@android:drawable/ic_menu_edit" />
+
+    <item
+        android:id="@+id/action_export"
+        android:title="Экспорт"
+        android:icon="@android:drawable/ic_menu_save" />
+
+    <item
+        android:id="@+id/action_history"
+        android:title="История"
+        android:icon="@android:drawable/ic_menu_recent_history" />
+
+    <item
+        android:id="@+id/action_stats"
+        android:title="Статистика"
+        android:icon="@android:drawable/ic_menu_view" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="Настройки"
+        android:icon="@android:drawable/ic_menu_preferences" />
+    <item
+        android:id="@+id/action_feedback"
+        android:title="Разработчикам"
+        android:icon="@android:drawable/ic_menu_info_details" />
+    <item
+        android:id="@+id/action_about"
+        android:title="О приложении"
+        android:icon="@android:drawable/ic_menu_info_details" />
+
+</menu>

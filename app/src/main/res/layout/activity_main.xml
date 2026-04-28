@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TopAppBar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:title="Финансовый Компас"
+        app:titleTextColor="@android:color/white">
+
+        <Button
+            android:id="@+id/btn_go_to_dreams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/oval_button_background"
+            android:text="Мои мечты"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Основной контент -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Остаток средств -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Остаток средств:"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_free_balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 ₽"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tv_cash_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💵 Наличные: 0 ₽"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"/>
+
+                <TextView
+                    android:id="@+id/tv_card_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   |   💳 Безналичные: 0 ₽"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginStart="8dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:layout_marginVertical="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Основной доход:"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:id="@+id/et_monthly_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите доход (₽)"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:layout_marginTop="4dp"/>
+
+            <Button
+                android:id="@+id/btn_apply_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Применить"
+                android:layout_marginTop="8dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="?android:attr/listDivider"
+                android:layout_marginVertical="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Операции"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Введите сумму"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="16dp">
+
+                <Button
+                    android:id="@+id/btn_income"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Доход"
+                    android:backgroundTint="#4CAF50"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btn_expense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Расход"
+                    android:backgroundTint="#F44336"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Последние операции:"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <ListView
+                android:id="@+id/list_operations"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:nestedScrollingEnabled="true" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BottomAppBar БЕЗ МЕНЮ, всё делаем вручную -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?attr/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageButton
+                android:id="@+id/btn_shopping_lists"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/oval_button_background"
+                android:src="@drawable/ic_shopping_list"
+                android:contentDescription="Списки покупок"
+                android:tint="@android:color/white"
+                android:scaleType="center" />
+
+            <Button
+                android:id="@+id/btn_go_to_expenses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/oval_button_background"
+                android:text="Обязательные траты"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <ImageButton
+                android:id="@+id/btn_undo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/oval_button_background"
+                android:src="@android:drawable/ic_menu_revert"
+                android:contentDescription="Отменить"
+                android:tint="@android:color/white"
+                android:scaleType="center" />
+
+            <!-- Меню (три точки) -->
+            <ImageButton
+                android:id="@+id/btn_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_menu_dots"
+                android:background="@android:color/transparent"
+                android:tint="@android:color/darker_gray"
+                android:contentDescription="Меню" />
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Обязательные траты"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_add_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="➕ Добавить категорию"
+        android:layout_margin="16dp"
+        android:background="@drawable/oval_button_background"
+        android:textColor="@android:color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/btn_back_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="На главный экран"
+        android:layout_margin="16dp" />
+
+</LinearLayout>
